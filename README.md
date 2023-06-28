@@ -62,7 +62,7 @@ npm run dev
 or if you didn’t install Nodemon:
 
 ```bash
-node server.js
+node build/server.js
 ```
 
 # Testing with cURL (or Postman)
