@@ -21,13 +21,16 @@ router.post('/notes', (req: any, res: any) => {
        return res.status(400).send({
            message: "Please ensure you include the name in your post."
        });
-   }
+    }
     const newUser = {
     id: dataStore.length + 1,
     name: req.body.name,
     age: req.body.age
   };
-  dataStore.push(newUser);
+  
+  // For safety, don't allow pushes on the outside world wide web (github pages)
+  //dataStore.push(newUser);
+
   res.status(201).json(newUser);
 });
 
